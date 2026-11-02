@@ -1,0 +1,37 @@
+appId: com.jingshi.desktop
+productName: 静时
+copyright: Copyright © 2026 JingShi
+
+directories:
+  buildResources: resources
+  output: dist
+
+files:
+  - out/**/*
+  - package.json
+
+extraResources:
+  - from: resources
+    to: resources
+    filter:
+      - icon.png
+
+asar: true
+
+win:
+  executableName: JingShi
+  icon: resources/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+  forceCodeSigning: false
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 静时
+  artifactName: JingShi-Setup-${version}.${ext}
+  deleteAppDataOnUninstall: false

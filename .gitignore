@@ -1,0 +1,32 @@
+node_modules
+out
+dist
+*.log
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Electron userData（包含 plans/records/runtime/settings，绝不能入库）
+jingshi-data.json
+
+# 本地 Playwright 验证与临时文件
+shot-*.png
+verify*.js
+debug-*.js
+measure-*.js
+
+# 环境变量
+.env
+.env.local
+
+# npm
+npm-debug.log*
+
+# Trae / IDE 临时产物
+.trae/
+.idea/
+*.swp
+*.swo
+
+# 系统 Thumbs.db
+Thumbs.db

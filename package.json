@@ -1,0 +1,38 @@
+{
+  "name": "jingshi",
+  "version": "0.1.0",
+  "description": "静时 · Windows 桌面自律督促软件",
+  "main": "./out/main/index.js",
+  "author": "JingShi",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "build": "electron-vite build",
+    "build:win": "npm run typecheck && electron-vite build && electron-builder --win nsis",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify/vue": "^5.0.5",
+    "lowdb": "^7.0.1",
+    "naive-ui": "^2.45.3",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vue-tsc": "^3.3.14"
+  }
+}
